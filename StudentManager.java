@@ -36,13 +36,13 @@ public class StudentManager {
         List<Student> students = loadStudents();
         for (Student s : students) {
             if (s.getRoll().equals(student.getRoll())) {
-                System.out.println("❌ Roll number already exists.");
+                System.out.println("Roll number already exists.");
                 return;
             }
         }
         students.add(student);
         saveStudents(students);
-        System.out.println("✅ Student added successfully.");
+        System.out.println("Student added successfully.");
     }
 
     // View students
@@ -64,11 +64,11 @@ public class StudentManager {
         List<Student> students = loadStudents();
         for (Student s : students) {
             if (s.getRoll().equals(roll)) {
-                System.out.println("✅ Found: Roll=" + s.getRoll() + ", Name=" + s.getName() + ", Grade=" + s.getGrade());
+                System.out.println(" Found: Roll=" + s.getRoll() + ", Name=" + s.getName() + ", Grade=" + s.getGrade());
                 return;
             }
         }
-        System.out.println("❌ Student not found.");
+        System.out.println(" Student not found.");
     }
 
     // Update student
@@ -79,11 +79,11 @@ public class StudentManager {
                 if (!newName.isEmpty()) s.setName(newName);
                 if (!newGrade.isEmpty()) s.setGrade(newGrade);
                 saveStudents(students);
-                System.out.println("✅ Student updated successfully.");
+                System.out.println(" Student updated successfully.");
                 return;
             }
         }
-        System.out.println("❌ Student not found.");
+        System.out.println(" Student not found.");
     }
 
     // Delete student
@@ -92,9 +92,9 @@ public class StudentManager {
         boolean removed = students.removeIf(s -> s.getRoll().equals(roll));
         if (removed) {
             saveStudents(students);
-            System.out.println("✅ Student deleted successfully.");
+            System.out.println(" Student deleted successfully.");
         } else {
-            System.out.println("❌ Student not found.");
+            System.out.println(" Student not found.");
         }
     }
 }
